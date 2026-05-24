@@ -492,11 +492,9 @@ st.divider()
 col1, col2 = st.columns([3,2])
 with col1:
     uploaded = st.file_uploader("📎 Tải ảnh tờ tiền", type=["jpg","jpeg","png","webp"])
-with col2:
-    use_cam = st.checkbox("📷 Dùng camera")
-    cam_img = st.camera_input("Chụp tờ tiền") if use_cam else None
 
-source = cam_img or uploaded
+
+source = uploaded
 
 if source:
     pil = Image.open(source).convert("RGB")
