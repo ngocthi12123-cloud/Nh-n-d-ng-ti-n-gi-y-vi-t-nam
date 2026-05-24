@@ -462,7 +462,7 @@ st.divider()
 
 @st.cache_resource(show_spinner=False)
 def load_model():
-    r = Recognizer(); r.train(); return r
+    r = Recognizer();r.load_templates(); r.train(); return r
 
 prog = st.progress(0, text="⚙️ Đang huấn luyện ANN...")
 t0 = time.time()
